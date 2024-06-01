@@ -63,7 +63,7 @@ const createRestaurantItemTemplate = (restaurant) => `
     <div class="post-item_content">
       <p tabindex="0" class="post-item_rating">⭐️ Rating: ${restaurant.rating}</p>
       <h1 tabindex="0" class="post-item_name">
-        <a href="/#/detail/${restaurant.id}">${restaurant.name || ' - '}</a>
+        <a href="#/detail/${restaurant.id}">${restaurant.name || ' - '}</a>
       </h1>
       <p tabindex="0" class="post-item_description">${restaurant.description || ' - '}</p>
       <p tabindex="0" class="post-item_city">Location: ${restaurant.city}</p>
