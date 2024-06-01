@@ -24,4 +24,7 @@ jobs:
           npm install
           npm run test
       - name: Deploying the static website to gh-pages
-        run: npm run deploy
+        run: 
+         npm run deploy
+         gh-pages -d build -b master
+           
