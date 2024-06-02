@@ -5,7 +5,7 @@ import Like from '../views/pages/like';
 const routes = {
   '/': ListRestaurant,
   '/list-restaurant': ListRestaurant,
-  '/Culinary-/detail/:id': Detail,
+  '/detail/:id': Detail,
   '/like': Like,
 };
 
