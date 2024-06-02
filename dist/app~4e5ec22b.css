@@ -27,8 +27,10 @@ body {
 /* Header */
 .header {
   width: 100%;
+  position: absolute;
   height: auto;
   padding: 1rem;
+  z-index: 10;
   font-size: 18px;
   margin-inline: auto;
   display: flex;
@@ -51,6 +53,7 @@ body {
   background-color: rgb(67, 84, 114);
   color: white;
   border: none;
+  z-index: 11
 }
 
 .nav-list ul {
@@ -99,7 +102,6 @@ main {
   font-weight: lighter;
   color: rgb(67, 84, 114);
   border-bottom: 1px solid rgb(67, 84, 114);
-  color: rgb(67, 84, 114);
   margin: 20px;
 }
 
@@ -192,13 +194,16 @@ main {
   color: white;
 }
 
-/* Container restaurants */
+
 .restaurants {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Atur penataan antar item */
-  gap: 20px; /* Spasi antar item */
-  padding: 20px; /* Padding untuk restaurants container */
+  margin: 30px auto auto;
+  text-align: left;
+ 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-row-gap: 30px;
+  grid-column-gap: 16px;
+  justify-items: center;
 }
 
 
@@ -526,21 +531,61 @@ label {
   .hero_title, .hero_tagline {
     font-size: 12px;
     text-align: center;
+    margin: auto;
   }
 }
 
-@media screen and (max-width: 350px) {
-  #restaurants, .reviews {
+@media screen and (max-width: 375px) {
+  .restaurants, .reviews {
     grid-template-columns: 1fr;
+  }
+
+  .header_title h1, .nav-list, .header__menu, body {
+    display: flex;
+    font-size: 18px;
+  }
+
+  .katalog_label {
+    font-size: 20px;
+    font-weight: lighter;
+  }
+
+  .post-item_content {
+    font-size: 14px;
   }
 
   .resto-info_menu {
     line-height: 44px;
-        margin-top: 0px;
-        color: #fff;
-        text-decoration: none;
+    margin-top: 0px;
+    color: #fff;
+    text-decoration: none;
   }
-}
+
+  .header__menu {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 11;
+    cursor: pointer;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(67, 84, 114);
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    border-radius: 5px;
+    z-index: 9; 
+  }
+
+  .nav-list.open {
+    display: flex;
+  }
+  }
 
 
 @media screen and (min-width: 500px) {
@@ -563,7 +608,6 @@ label {
 
   .hero {
     min-width: 1000px;
-    min-height: auto;
   }
 }
 

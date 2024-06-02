@@ -6,9 +6,8 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
-
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
@@ -58,6 +57,27 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
     }),
+
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js',
+      runtimeCaching: [
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://api.themoviedb.org/3/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'themoviedb-api',
+          },
+        },
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://image.tmdb.org/t/p/w500/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'themoviedb-image-api',
+          },
+        },
+      ],
+    }),
+
     new CopyWebpackPlugin({
       patterns: [
         {

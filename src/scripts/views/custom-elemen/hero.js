@@ -34,7 +34,7 @@ class Hero extends HTMLElement {
       background-image: url(images/hero-image_4.jpg);
       background-position: center;
       background-size: cover;
-      z-index: -1; /* Ensure the background image is behind the text */
+      z-index: -1;
     }
     
     .hero_inner {
@@ -60,6 +60,31 @@ class Hero extends HTMLElement {
       font-size: 18px;
       font-weight: 350;
       text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+    }
+
+    @media screen and (max-width: 375px) {
+      .hero_title {
+        font-size: 18px;
+        font-weight: 450;
+        margin: 0.3em 0.1em;
+        color: #FFFFFF;
+        display: inline-block;
+       
+        text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+      }
+      
+      .hero_tagline {
+        color: #FFFFFF;
+        margin-top: 16px;
+        font-size: 14px;
+        font-weight: 350;
+        text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+      }
+    }
+    @media screen and (min-width: 1200px) {
+      .hero {
+        min-width: 1000px;
+      }
     }
     `;
   }
