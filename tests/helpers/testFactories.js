@@ -8,4 +8,5 @@ const createLikeButtonPresenterWithRestaurant = async (restaurant) => {
     restaurant,
   });
 };
+// eslint-disable-next-line import/prefer-default-export
 export { createLikeButtonPresenterWithRestaurant };

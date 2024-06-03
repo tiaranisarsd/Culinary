@@ -49,11 +49,11 @@ body {
   margin: 10px auto;
   display: block;
   width: 50px;
-  padding: 5px;
+  padding:12px;
   background-color: rgb(67, 84, 114);
   color: white;
   border: none;
-  z-index: 11
+  z-index: 11;
 }
 
 .nav-list ul {
@@ -68,10 +68,11 @@ body {
 }
 
 .nav-list ul li a {
+  display: inline-block;
   text-decoration: none;
   font-size: 18px;
   color: white;
-  padding: 15px;
+  padding: 12px;
 }
 
 .nav-list ul li a:hover {
@@ -94,6 +95,7 @@ main {
   width: 100%;
   margin: 50px auto;
   text-align: center;
+  margin-top: 10%;
   color: rgb(67, 84, 114);
 }
 
@@ -102,7 +104,7 @@ main {
   font-weight: lighter;
   color: rgb(67, 84, 114);
   border-bottom: 1px solid rgb(67, 84, 114);
-  margin: 20px;
+  margin-top: 5%;
 }
 
 
@@ -129,8 +131,7 @@ main {
 .post-item_name a {
   text-decoration: none;
   color: rgb(38, 50, 71);
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 12px;
 }
 
 .post-item_name a:hover {
@@ -357,6 +358,7 @@ footer p {
 
 .name_customer {
   font-weight: bold;
+  text-align: center;
   font-size: 18px;
   margin-bottom: 8px;
   color: rgb(67, 84, 114);
@@ -427,7 +429,10 @@ footer p {
 }
 
 input[type=text], textarea {
-  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 12px;
+  box-sizing: border-box;
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
   border-radius: 7px;

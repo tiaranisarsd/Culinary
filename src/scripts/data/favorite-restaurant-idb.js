@@ -14,6 +14,8 @@ const FavoriteRestaurantIdb = {
     if (!id) {
       return;
     }
+
+    // eslint-disable-next-line consistent-return
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
   },
   async getAllRestaurants() {

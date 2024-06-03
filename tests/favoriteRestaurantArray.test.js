@@ -8,7 +8,7 @@ const FavoriteRestaurantArray = {
     if (!id) {
       return;
     }
-
+    // eslint-disable-next-line consistent-return, eqeqeq
     return favoriteRestaurants.find((restaurant) => restaurant.id == id);
   },
 
@@ -33,6 +33,7 @@ const FavoriteRestaurantArray = {
   deleteRestaurant(id) {
     // cara boros menghapus restaurant dengan meng-copy film yang ada
     // kecuali film dengan id == id
+    // eslint-disable-next-line eqeqeq
     favoriteRestaurants = favoriteRestaurants.filter((restaurant) => restaurant.id != id);
   },
 
@@ -45,12 +46,14 @@ const FavoriteRestaurantArray = {
         const loweredCaseQuery = query.toLowerCase();
         const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
 
+        // eslint-disable-next-line eqeqeq
         return jammedRestaurantName.indexOf(jammedQuery) != -1;
       });
   },
 };
 
 describe('Favorite Restaurant Array Contract Test Implementation', () => {
+  // eslint-disable-next-line no-return-assign
   afterEach(() => favoriteRestaurants = []);
 
   itActsAsFavoriteRestaurantModel(FavoriteRestaurantArray);

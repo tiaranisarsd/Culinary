@@ -49,11 +49,11 @@ body {
   margin: 10px auto;
   display: block;
   width: 50px;
-  padding: 5px;
+  padding:12px;
   background-color: rgb(67, 84, 114);
   color: white;
   border: none;
-  z-index: 11
+  z-index: 11;
 }
 
 .nav-list ul {
@@ -68,10 +68,11 @@ body {
 }
 
 .nav-list ul li a {
+  display: inline-block;
   text-decoration: none;
   font-size: 18px;
   color: white;
-  padding: 15px;
+  padding: 12px;
 }
 
 .nav-list ul li a:hover {
@@ -94,6 +95,7 @@ main {
   width: 100%;
   margin: 50px auto;
   text-align: center;
+  margin-top: 10%;
   color: rgb(67, 84, 114);
 }
 
@@ -102,7 +104,7 @@ main {
   font-weight: lighter;
   color: rgb(67, 84, 114);
   border-bottom: 1px solid rgb(67, 84, 114);
-  margin: 20px;
+  margin-top: 5%;
 }
 
 
@@ -129,8 +131,7 @@ main {
 .post-item_name a {
   text-decoration: none;
   color: rgb(38, 50, 71);
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 12px;
 }
 
 .post-item_name a:hover {
@@ -357,6 +358,7 @@ footer p {
 
 .name_customer {
   font-weight: bold;
+  text-align: center;
   font-size: 18px;
   margin-bottom: 8px;
   color: rgb(67, 84, 114);
@@ -427,7 +429,10 @@ footer p {
 }
 
 input[type=text], textarea {
-  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 12px;
+  box-sizing: border-box;
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
   border-radius: 7px;
@@ -464,16 +469,6 @@ label {
     padding: 12px 25px;
     margin-top: 0;
   }
-
-  .header_title, .nav-list {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .hero_title, .hero_tagline {
-    font-size: 14px;
-    text-align: center;
-  }
 }
 
 @media screen and (max-width: 657px) {
@@ -485,54 +480,48 @@ label {
   .header h1{
     font-size: 30px;
   }
+  .katalog{
+      margin-top: 18%;
+  }
 }
 
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 500px) {
+  .katalog {
+    margin-top: 25%;
+  }
   .nav-list {
-    z-index: 100;
+    display: none;
+    flex-direction: column;
     background-color: rgb(67, 84, 114);
-    width: 100%;
-    height: 170px;
-    top: 70px;
-    left: 0px;
+    padding: 10px;
     position: absolute;
+    top: 50px;
+    width: 100%;
+    height: auto;
+    right: 8px;
+    border-radius: 5px;
+    z-index: 9; 
+    font-size: 12px;
     -webkit-transform: translate(100%, 0);
     transform: translate(-200%, 0);
   }
 
-  .open {
+  .nav-list.open {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
     transition: transform 0.3s ease;
-  }
-
-  .nav-list ul {
     display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .nav-list ul li a {
-    color: white;
-  }
-
-  .nav_item {
-    display: list-item;
-    border-bottom: 1px solid white;
-    width: 100%;
-    text-align: left;
-    padding: 10px;
+    top: 75px;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+    max-height: max-content;
   }
 
   .reviews {
     grid-template-columns: 1fr;
   }
 
-  .hero_title, .hero_tagline {
-    font-size: 12px;
-    text-align: center;
-    margin: auto;
-  }
 }
 
 @media screen and (max-width: 375px) {
@@ -540,18 +529,23 @@ label {
     grid-template-columns: 1fr;
   }
 
-  .header_title h1, .nav-list, .header__menu, body {
+  .header_title h1, .nav-list, .header__menu, .post_review_title, .reviews-title, .name_customer {
     display: flex;
     font-size: 18px;
+    padding: 14px;
+    
   }
 
   .katalog_label {
     font-size: 20px;
     font-weight: lighter;
   }
+  .katalog{
+    margin-top: 25%;
+  }
 
-  .post-item_content {
-    font-size: 14px;
+  .post-item a, .post-item_content, .post-item_rating, .post-item_city, footer p, .post_review, label, input.btn-submit, .review_customer, .review_date, .nav-list {
+    font-size: 12px;
   }
 
   .resto-info_menu {
@@ -566,8 +560,20 @@ label {
     position: absolute;
     right: 10px;
     top: 10px;
+    padding: 14px;
     z-index: 11;
     cursor: pointer;
+    min-height: 44px;
+  }
+
+  a, button, input[type=text], textarea {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .post_detail, .post-item, .resto-info{
+    font-size: 12px;
+    border-radius: 8px;
   }
 
   .nav-list {
@@ -577,18 +583,36 @@ label {
     padding: 10px;
     position: absolute;
     top: 50px;
-    right: 10px;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+    height: auto;
+    right: 8px;
     border-radius: 5px;
     z-index: 9; 
+    font-size: 12px;
+    -webkit-transform: translate(100%, 0);
+    transform: translate(-200%, 0);
   }
 
   .nav-list.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    transition: transform 0.3s ease;
     display: flex;
+    font-size: 12px;
+    top: 60px;
+    right: 0;
+    text-align: center;
+    max-height: max-content;
+  }
+
+  .resto-info_name, .post_review_title label{
+    font-size: 18px;
   }
   }
 
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 501px) {
   .header__menu {
     display: none;
   }

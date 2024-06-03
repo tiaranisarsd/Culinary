@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import FavoriteRestaurantView from './liked-restaurant/favorite-restaurant-view';
 import FavoriteRestaurantShowPresenter from './liked-restaurant/favorite-restaurant-show-presenter';
@@ -11,8 +12,8 @@ const Like = {
   },
 
   async afterRender() {
-    new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb});
-    new FavoriteRestaurantSearchPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb});
+    new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb });
+    new FavoriteRestaurantSearchPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb });
     this._hideHero();
   },
 

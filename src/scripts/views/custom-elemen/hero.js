@@ -7,21 +7,13 @@ class Hero extends HTMLElement {
 
   _updateStyle() {
     this._style.textContent = `
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    
     .hero {
       position: relative;
-      height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
-      color: white;
-      z-index: 1;
-      border-radius: 8px;
+      min-height: 400px;
+      width: 100%;
+      text-align: center;
     }
     
     .hero::before {
@@ -30,11 +22,10 @@ class Hero extends HTMLElement {
       top: 0;
       left: 0;
       width: 100%;
-      height: 500px;
-      background-image: url(images/hero-image_4.jpg);
+      height: 100%;
+      background-image: url(images/hero-image_4-large.jpg);
       background-position: center;
       background-size: cover;
-      z-index: -1;
     }
     
     .hero_inner {
@@ -46,25 +37,38 @@ class Hero extends HTMLElement {
     
     .hero_title {
       font-size: 4em;
-      font-weight: 450;
+      font-weight: 350;
       margin: 0.3em 0.1em;
       color: #FFFFFF;
       display: inline-block;
-     
       text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
     }
     
     .hero_tagline {
-      color: #FFFFFF;
+      color: #FFFBDA;
       margin-top: 16px;
       font-size: 18px;
-      font-weight: 350;
+      font-weight: 250;
       text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+    }
+
+    @media screen and (max-width: 650px) {
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(images/hero-image_4-small.jpg);
+        background-position: center;
+        background-size: cover;
+      }
     }
 
     @media screen and (max-width: 375px) {
       .hero_title {
-        font-size: 18px;
+        font-size: 24px;
         font-weight: 450;
         margin: 0.3em 0.1em;
         color: #FFFFFF;
@@ -75,9 +79,9 @@ class Hero extends HTMLElement {
       
       .hero_tagline {
         color: #FFFFFF;
-        margin-top: 16px;
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 350;
+        margin: 0.3em 0.1em;
         text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
       }
     }
@@ -85,7 +89,6 @@ class Hero extends HTMLElement {
       .hero {
         min-width: 1000px;
       }
-    }
     `;
   }
 

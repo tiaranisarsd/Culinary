@@ -1,3 +1,6 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-undef */
 const assert = require('assert');
 
 Feature('Liking Restaurants');

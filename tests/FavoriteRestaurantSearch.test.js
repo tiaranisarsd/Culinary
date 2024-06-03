@@ -72,7 +72,8 @@ describe('Searching Restaurants', () => {
         done();
       });
 
-      favoriteRestaurants.searchRestaurants.mockImplementation((query) => []);
+      // eslint-disable-next-line no-unused-vars
+      favoriteRestaurants.searchRestaurants.mockImplementation((_query) => []);
 
       searchRestaurants('restaurant a');
     });
@@ -84,7 +85,8 @@ describe('Searching Restaurants', () => {
         done();
       });
 
-      favoriteRestaurants.searchRestaurants.mockImplementation((query) => []);
+      // eslint-disable-next-line no-unused-vars
+      favoriteRestaurants.searchRestaurants.mockImplementation((_query) => []);
 
       searchRestaurants('restaurant a');
     });

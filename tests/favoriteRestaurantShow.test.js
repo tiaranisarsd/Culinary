@@ -37,10 +37,12 @@ describe('Showing all favorite restaurants', () => {
         getAllRestaurants: jest.fn().mockImplementation(() => []),
       };
 
+      // eslint-disable-next-line no-new
       new FavoriteRestaurantShowPresenter({
         view,
         favoriteRestaurants,
       });
+
       expect(favoriteRestaurants.getAllRestaurants).toHaveBeenCalledTimes(1);
     });
 
@@ -56,6 +58,7 @@ describe('Showing all favorite restaurants', () => {
         getAllRestaurants: jest.fn().mockImplementation(() => []),
       };
 
+      // eslint-disable-next-line no-new
       new FavoriteRestaurantShowPresenter({
         view,
         favoriteRestaurants,
